@@ -37,7 +37,6 @@ const ContactForm = ({ submit }) => {
     evt.preventDefault();
 
     submit({ name, number });
-    console.log('{ name, number }', { name, number });
 
     reset();
   };

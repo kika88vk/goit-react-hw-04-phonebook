@@ -60,9 +60,9 @@ const App = () => {
   };
 
   const deleteContact = id => {
-    setContacts(prevContacts => {
-      prevContacts.filter(contact => contact.id !== id);
-    });
+    setContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== id)
+    );
   };
 
   // const deleteContact = id => {
@@ -70,20 +70,6 @@ const App = () => {
   //     contacts: prevState.contacts.filter(contact => contact.id !== id),
   //   }));
   // };
-
-  // componentDidMount() {
-  //   const contacts = localStorage.getItem('contacts');
-  //   const parsedContacts = JSON.parse(contacts);
-  //   if (parsedContacts) {
-  //     this.setState({ contacts: parsedContacts });
-  //   }
-  // }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.state.contacts !== prevState.contacts) {
-  //     localStorage.setItem('contacts', JSON.stringify(contacts));
-  //   }
-  // }
 
   const visibleContacts = getFilteredContacts();
   return (
