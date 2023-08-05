@@ -43,10 +43,8 @@ const App = () => {
       return;
     }
 
-    setContacts(prevContacts => ({
-      contact,
-      ...prevContacts,
-    }));
+    setContacts(prevContacts => [contact, ...prevContacts]);
+    console.log('contacts', contacts);
   };
 
   const handleChangeFilter = evt => {
@@ -87,7 +85,7 @@ const App = () => {
   //   }
   // }
 
-  // const visibleContacts = getFilteredContacts();
+  const visibleContacts = getFilteredContacts();
   return (
     <div className={css.container}>
       <h1 className={css.heading}>Phonebook</h1>
@@ -96,10 +94,7 @@ const App = () => {
 
       <h2 className={css.heading}>Contacts</h2>
       <Filter value={filterList} onChange={handleChangeFilter} />
-      <ContactList
-        contacts={getFilteredContacts()}
-        onDeleteContact={deleteContact}
-      />
+      <ContactList contacts={visibleContacts} onDeleteContact={deleteContact} />
     </div>
   );
 };
